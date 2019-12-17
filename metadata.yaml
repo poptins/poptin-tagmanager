@@ -1,5 +1,10 @@
 homepage: "https://www.poptin.com/"
 documentation: "https://help.poptin.com/article/show/100262-where-can-i-find-my-account-s-user-id"
 versions:
+# Latest version
+  - sha: 66c4ec4724a2749e36faff3a580a31eddaddad8f
+    changeNotes:
+      Update Icon ,Author and description.
+# Older versions
   - sha: d3fcc18b02e2736109c6bdfa448a247fd08ff702
     changeNotes: Initial Version
