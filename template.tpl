@@ -46,6 +46,9 @@ ___TEMPLATE_PARAMETERS___
           13,
           13
         ]
+      },
+      {
+        "type": "NON_EMPTY"
       }
     ]
   }
@@ -57,17 +60,16 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 // Enter your template code here.
 const query = require('queryPermission');
 const log = require('logToConsole');
+const encodeUriComponent = require('encodeUriComponent');
 const injectScript = require('injectScript');
-const url = 'https://cdn.popt.in/pixel.js?id='+data.userId;
+const url = 'https://cdn.popt.in/pixel.js?id='+encodeUriComponent(data.userId);
 if (query('inject_script', url)) {
-  injectScript(url,function(){
-  log('Loaded');
-  });
+  if(injectScript(url)){
+    data.gtmOnSuccess();
+  }else{
+  	data.gtmOnFailure();
+  }
 }
-
-
-// Call data.gtmOnSuccess when the tag is finished.
-data.gtmOnSuccess();
 
 
 ___WEB_PERMISSIONS___
