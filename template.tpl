@@ -64,12 +64,13 @@ const encodeUriComponent = require('encodeUriComponent');
 const injectScript = require('injectScript');
 const url = 'https://cdn.popt.in/pixel.js?id='+encodeUriComponent(data.userId);
 if (query('inject_script', url)) {
-  if(injectScript(url)){
+  injectScript(url, () => {
+    log('Loaded');
+    // Call data.gtmOnSuccess when the tag is finished.
     data.gtmOnSuccess();
-  }else{
-  	data.gtmOnFailure();
-  }
+  }, data.gtmOnFailure);
 }
+
 
 
 ___WEB_PERMISSIONS___
