@@ -4,7 +4,7 @@ versions:
 # Latest version
   - sha: 305d1db98d57b700d25d3af3b7e01d073813c3dd
     changeNotes:
-      code changed for gtmonSuccess,gtmonFailure 
+      Code changed for "gtmonSuccess", "gtmonFailure" 
 # Older versions
   - sha: 549f726716e96af10c2624379748f6e4fd9f76a5
     changeNotes:
